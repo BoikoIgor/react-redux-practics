@@ -1,7 +1,7 @@
 import { MdClose } from 'react-icons/md';
 import { Btn, Checkbox, Text, Wrapper } from './Task.styled';
 import { useDispatch } from 'react-redux';
-import { deleteTask, toggleCompleted } from 'redux/actions';
+import { deleteTask, toggleCompleted } from 'redux/tasksSlice';
 
 export const Task = ({ task }) => {
   // Отримуємо посилання на функцію відправки екшенів

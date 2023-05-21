@@ -3,7 +3,7 @@ import { Wrapper } from './StatusFilterstyled';
 import { useDispatch, useSelector } from 'react-redux';
 import { statusFilters } from 'redux/constants';
 import { getStatusFilter } from 'redux/selectors';
-import { setStatusFilter } from 'redux/actions';
+import { setStatusFilter } from 'redux/filtersSlice';
 
 export const StatusFilter = () => {
   // Отримуємо посилання на функцію відправки екшенів
