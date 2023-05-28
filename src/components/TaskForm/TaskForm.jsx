@@ -1,8 +1,9 @@
 import { Button } from 'components/Button/Button';
 import { Field, InputForm } from './TaskForm.styled';
 import { useDispatch } from 'react-redux';
+import { addTask } from 'redux/operations';
 // Імпортуємо генератор екшену
-import { addTask } from '../../redux/tasksSlice';
+// import { addTask } from '../../redux/tasksSlice';
 
 export const TaskForm = () => {
   // Отримуємо посилання на функцію відправки екшенів
@@ -13,7 +14,8 @@ export const TaskForm = () => {
     const form = event.target;
     // Викликаємо генератор екшену та передаємо текст завдання для поля payload
     // Відправляємо результат – екшен створення завдання
-    dispatch(addTask(form.elements.text.value));
+    // dispatch(addTask(form.elements.text.value));
+    dispatch(addTask(event.target.elements.text.value));
     form.reset();
   };
 
