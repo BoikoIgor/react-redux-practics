@@ -34,19 +34,12 @@ const tasksSlice = createSlice({
   },
   // Додаємо обробку зовнішніх екшенів
   extraReducers: {
-    // [fetchTasks.pending](state, action) {
-    //   state.isLoading = true;
-    // },
     [fetchTasks.pending]: handlePending,
     [fetchTasks.fulfilled](state, action) {
       state.isLoading = false;
       state.error = null;
       state.items = action.payload;
     },
-    // [fetchTasks.rejected](state, action) {
-    //   state.isLoading = false;
-    //   state.error = action.payload;
-    // },
     [fetchTasks.rejected]: handleRejected,
     [addTask.pending]: handlePending,
     [addTask.fulfilled](state, action) {
@@ -121,6 +114,6 @@ const tasksSlice = createSlice({
 
 // Експортуємо генератори екшенів та редюсер
 // export const { addTask, deleteTask, toggleCompleted } = tasksSlice.actions;
-export const { fetchingInProgress, fetchingSuccess, fetchingError } =
-  tasksSlice.actions;
+// export const { fetchingInProgress, fetchingSuccess, fetchingError } =
+//   tasksSlice.actions;
 export const tasksReducer = tasksSlice.reducer;
